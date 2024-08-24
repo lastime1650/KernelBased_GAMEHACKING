@@ -4,6 +4,7 @@ This is my tiny game hacking project for development WELCOME!
 
 커널 기반으로 게임 치트를 만들어 연구하였습니다. ( Beta Version NOW ) 
 
+1인 개발 프로젝트입니다.
 
 ---
 
@@ -66,9 +67,22 @@ IOCTL은 유저모드와 커널모드간 버퍼를 공유하는 매개체입니�
 
 ![initial](https://github.com/lastime1650/KernelBased_GAMEHACKING/blob/main/Images/4.PNG)
 
+
+
 <br>
 
 
 ![initial](https://github.com/lastime1650/KernelBased_GAMEHACKING/blob/main/Images/5.PNG)
+
+마지막 현재 구현된 대표적 기능입니다.
+
+1. 커널 기반 덤프 ( 일부러 안티치트를 유저모드에서 우회해서 할 필요가 전혀없습니다. )
+2. 스캐닝 ( 최초스캔, 다음스캔 )
+3. 재사용 ( 값 변경을 확인할 수 있습니다. )
+4. 데이터 변조 ( 매우 위험합니다. ) 
+
+이렇게 수많은 데이터를 IOCTL 단 한번의 통신으로 가능한 방법은 바로 직접 구조체를 정의하고 구현하는 것입니다. 
+또한 서로 전달해야할 데이터가 많은 경우, "동적 연결리스트"를 적극적으로 도입하였습니다. 
+
 
 <br>
