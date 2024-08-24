@@ -81,8 +81,19 @@ IOCTL은 유저모드와 커널모드간 버퍼를 공유하는 매개체입니�
 3. 재사용 ( 값 변경을 확인할 수 있습니다. )
 4. 데이터 변조 ( 매우 위험합니다. ) 
 
+<br>
+
+![initial](https://github.com/lastime1650/KernelBased_GAMEHACKING/blob/main/Images/6.PNG)
+
 이렇게 수많은 데이터를 IOCTL 단 한번의 통신으로 가능한 방법은 바로 직접 구조체를 정의하고 구현하는 것입니다. 
 또한 서로 전달해야할 데이터가 많은 경우, "동적 연결리스트"를 적극적으로 도입하였습니다. 
 
-
 <br>
+
+![initial](https://github.com/lastime1650/KernelBased_GAMEHACKING/blob/main/Images/7.PNG)
+
+여기서 문제는 커널에서 할당된 데이터를 어떻게 유저모드에게 전달하는 지에 대한 문제입니다.
+왜냐하면 유저모드는 커널모드에서의 할당된 주소를 참조할 수 없기 때문입니다.
+
+그래서, ZwAllocateVirtualMemory API를 커널에서 사용하여 미리 유저모드의 HEAP 공간에 동적할당하여 그안에 데이터를 미리 COPY하고,
+동적할당된 주소의 시작주소와 크기만 유저모드에게 알려주면됩니다.
