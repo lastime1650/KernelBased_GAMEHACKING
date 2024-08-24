@@ -1,0 +1,11 @@
+C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\API_LOADER_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\API_LOADER_logic.obj
+C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\DriverEntry_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\DriverEntry_logic.obj
+C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\IOCTL_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\IOCTL_logic.obj
+C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\KEVENT_or_KMUTEX_init_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\KEVENT_or_KMUTEX_init_logic.obj
+C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\main.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\main.obj
+C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\MEM_DUMP_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\MEM_DUMP_logic.obj
+C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\MEM_HACK_LINK_LIST_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\MEM_HACK_LINK_LIST_logic.obj
+C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\MEM_HACK_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\MEM_HACK_logic.obj
+C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\MEM_HACK_private_link_list_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\MEM_HACK_private_link_list_logic.obj
+C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\PE_parsing_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\PE_parsing_logic.obj
+C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\Process_manager_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\Process_manager_logic.obj

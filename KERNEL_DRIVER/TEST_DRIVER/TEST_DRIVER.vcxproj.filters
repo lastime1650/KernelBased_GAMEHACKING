@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Driver Files">
+      <UniqueIdentifier>{8E41214B-6785-4CFE-B992-037D68949A14}</UniqueIdentifier>
+      <Extensions>inf;inv;inx;mof;mc;</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files\오브젝트_동적관리">
+      <UniqueIdentifier>{0d533d9b-f533-4785-a966-2e3f53112cf6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MEMORY_HACKING">
+      <UniqueIdentifier>{fbc05c65-b0a5-4aa5-914c-abb79703f03c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MEMORY_HACKING\연결리스트">
+      <UniqueIdentifier>{6f9d235a-4335-4638-aa9a-3e98bc35af1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MEMORY_HACKING\연결리스트\IOCTL요청자전용">
+      <UniqueIdentifier>{d0a5a1f9-c4db-481b-b35e-28dca5090262}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MEMORY_HACKING\연결리스트\내부 사용용">
+      <UniqueIdentifier>{a55ed797-ccaa-49e2-8b24-225eef092f5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\프로세스작업">
+      <UniqueIdentifier>{7d4e5809-6698-48cc-a11b-53a38e889052}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\API로더">
+      <UniqueIdentifier>{7c895206-ffe2-422e-95dc-965f3de55db9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PE파싱">
+      <UniqueIdentifier>{051f48fc-4ed0-44a4-87b5-95c8c05efa7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MEMORY_HACKING\연결리스트\IOCTL요청자전용\덤프">
+      <UniqueIdentifier>{060dc256-9358-4f89-9b04-65e4c0da8ab7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Inf Include="TEST_DRIVER.inf">
+      <Filter>Driver Files</Filter>
+    </Inf>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverEntry_logic.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IOCTL_logic.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KEVENT_or_KMUTEX_init_logic.c">
+      <Filter>Source Files\오브젝트_동적관리</Filter>
+    </ClCompile>
+    <ClCompile Include="MEM_HACK_private_link_list_logic.c">
+      <Filter>Source Files\MEMORY_HACKING\연결리스트\내부 사용용</Filter>
+    </ClCompile>
+    <ClCompile Include="MEM_HACK_logic.c">
+      <Filter>Source Files\MEMORY_HACKING</Filter>
+    </ClCompile>
+    <ClCompile Include="MEM_HACK_LINK_LIST_logic.c">
+      <Filter>Source Files\MEMORY_HACKING\연결리스트\IOCTL요청자전용</Filter>
+    </ClCompile>
+    <ClCompile Include="API_LOADER_logic.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MEM_DUMP_logic.c">
+      <Filter>Source Files\MEMORY_HACKING\연결리스트\IOCTL요청자전용\덤프</Filter>
+    </ClCompile>
+    <ClCompile Include="Process_manager_logic.c">
+      <Filter>Source Files\프로세스작업</Filter>
+    </ClCompile>
+    <ClCompile Include="PE_parsing_logic.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DriverEntry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IOCTL.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KEVENT_or_KMUTEX_init.h">
+      <Filter>Source Files\오브젝트_동적관리</Filter>
+    </ClInclude>
+    <ClInclude Include="MEM_HACK.h">
+      <Filter>Source Files\MEMORY_HACKING</Filter>
+    </ClInclude>
+    <ClInclude Include="MEM_HACK_LINK_LIST.h">
+      <Filter>Source Files\MEMORY_HACKING\연결리스트\IOCTL요청자전용</Filter>
+    </ClInclude>
+    <ClInclude Include="MEM_HACK_private_link_list.h">
+      <Filter>Source Files\MEMORY_HACKING\연결리스트\내부 사용용</Filter>
+    </ClInclude>
+    <ClInclude Include="Process_manager.h">
+      <Filter>Source Files\프로세스작업</Filter>
+    </ClInclude>
+    <ClInclude Include="API_LOADER.h">
+      <Filter>Source Files\API로더</Filter>
+    </ClInclude>
+    <ClInclude Include="PE_parsing.h">
+      <Filter>Source Files\PE파싱</Filter>
+    </ClInclude>
+    <ClInclude Include="MEM_DUMP_Link.h">
+      <Filter>Source Files\MEMORY_HACKING\연결리스트\IOCTL요청자전용\덤프</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

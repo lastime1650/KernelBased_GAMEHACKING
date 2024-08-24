@@ -1,0 +1,62 @@
+;
+; TEST_DRIVER.inf
+;
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = System ; TODO: specify appropriate Class
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318} ; TODO: specify appropriate ClassGuid
+Provider    = %ManufacturerName%
+CatalogFile = TEST_DRIVER.cat
+DriverVer   = ; TODO: set DriverVer in stampinf property pages
+PnpLockdown = 1
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+TEST_DRIVER.sys = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName% = Standard,NT$ARCH$.10.0...16299 ; %13% support introduced in build 16299
+
+[Standard.NT$ARCH$.10.0...16299]
+%TEST_DRIVER.DeviceDesc% = TEST_DRIVER_Device, Root\TEST_DRIVER ; TODO: edit hw-id
+
+[TEST_DRIVER_Device.NT]
+CopyFiles = File_Copy
+
+[File_Copy]
+TEST_DRIVER.sys
+
+;-------------- Service installation
+[TEST_DRIVER_Device.NT.Services]
+AddService = TEST_DRIVER,%SPSVCINST_ASSOCSERVICE%, TEST_DRIVER_Service_Inst
+
+; -------------- TEST_DRIVER driver install sections
+[TEST_DRIVER_Service_Inst]
+DisplayName    = %TEST_DRIVER.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\TEST_DRIVER.sys
+
+[TEST_DRIVER_Device.NT.Wdf]
+KmdfService = TEST_DRIVER, TEST_DRIVER_wdfsect
+
+[TEST_DRIVER_wdfsect]
+KmdfLibraryVersion = $KMDFVERSION$
+
+[Strings]
+SPSVCINST_ASSOCSERVICE = 0x00000002
+ManufacturerName = "<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+DiskName = "TEST_DRIVER Installation Disk"
+TEST_DRIVER.DeviceDesc = "TEST_DRIVER Device"
+TEST_DRIVER.SVCDESC = "TEST_DRIVER Service"
