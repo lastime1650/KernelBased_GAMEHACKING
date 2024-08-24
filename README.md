@@ -24,7 +24,7 @@ IOCTL 프로그램은 직접 작성하셔야합니다.
 
 # 사용방법 
 
-![initial](https://github.com/lastime1650/KernelBased_GAMEHACKING/blob/main/Images/image.PNG)
+![initial](https://github.com/lastime1650/KernelBased_GAMEHACKING/blob/main/Images/image.png)
 
 이 드라이버는 연구용 드라이버이기 때문에, KDU와 같은 불법 로더를 이용하여 로드하면 됩니다.
 
