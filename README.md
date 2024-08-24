@@ -20,6 +20,20 @@ This is my tiny game hacking project for development WELCOME!
 
 ![initial](https://github.com/lastime1650/KernelBased_GAMEHACKING/blob/main/Images/2.PNG)
 
+대표적으로 제가 개발한 치트 동작은 총 2개의 API를 대표적으로 중요시합니다.
+
+1. ZwQueryVirtualMemory
+2. MmCopyVirtualMemory
+
+먼저 *ZwQueryVirtualMemory* 는 타겟 프로세스의 HANDLE 값을 통해서 0x0000000 부터 끝까지 "가상주소"를 조회할 수 있습니다.
+여기서는 주로 게임의 재화나 아이템들은 PAGE_READWRITE 메모리 보호수준에 존재할 수 있고, 만약에 DUMP를 원한다면 MEM_IMAGE 또는 MEM_MAPPED 와 같은 메모리 타입을 조회하면 DUMP할 수 있습니다.
+즉, 이 API는 게임 프로세스의 메모리는 모두 파악할 수 있습니다. 
+
+다음 *MmCopyVirtualMemory* 는 직접 게임 프로세스에 개입이 가능합니다. 즉, 이는 적극적인 행위를 하는 API이기 때문에 위험도가 높습니다.
+ZwQueryVirtualMemory에 의해 접근할 가상주소를 얻었다면, 이 MmCopyVirtualMemory를 통하여 "직잡" 데이터를 가져오거나(READ) 쓸수있습니다(WRITE)
+
+*주의* WRITE, 즉 쓰기작업은 매우 위험합니다!!!!!!!!!!!!!!! 그리고, 커널기반으로 쓰기작업을 하였어도, 안티치트의 솔루션에 의하여 감지될 수 있습니다. 
+
 <br>
 ![initial](https://github.com/lastime1650/KernelBased_GAMEHACKING/blob/main/Images/3.PNG)
 
