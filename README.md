@@ -7,6 +7,17 @@ This is my tiny game hacking project for development WELCOME!
 
 ---
 
+# *[주의]*
+
+IOCTL 프로그램은 직접 작성하셔야합니다. 
+
+이것은 연구목적이기 때문에 편리함은 고려하지 않았습니다.
+
+또한 지금 현재, 이 연구는 지속적인 업데이트가 필요합니다.
+
+계속 저의 연구를 응원해주신다면, 많은 업데이트로 여러분을 보답하겠습니다.
+
+---
 
 
 # Description 설명 
