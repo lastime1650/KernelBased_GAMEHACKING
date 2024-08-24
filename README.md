@@ -20,6 +20,15 @@ IOCTL 프로그램은 직접 작성하셔야합니다.
 
 [+] 밑에 있는 설명은 모두 읽어주셔야합니다.
 
+---
+
+# 사용방법 
+
+![initial](https://github.com/lastime1650/KernelBased_GAMEHACKING/blob/main/Images/image.PNG)
+
+이 드라이버는 연구용 드라이버이기 때문에, KDU와 같은 불법 로더를 이용하여 로드하면 됩니다.
+
+( KDU Loader는 DriverObject가 항상 NULL이기 떄문에 IoCreateDriver()를 이용하여 초기에 드라이버를 생성해야 IOCTL를 구현할 수 있습니다. ( for Making a Device )  )
 
 ---
 
