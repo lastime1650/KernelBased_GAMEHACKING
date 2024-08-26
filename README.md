@@ -49,7 +49,7 @@ IOCTL 프로그램은 직접 작성하셔야합니다.
 
 ( KDU Loader는 DriverObject가 항상 NULL이기 떄문에 IoCreateDriver()를 이용하여 초기에 드라이버를 생성해야 IOCTL를 구현할 수 있습니다. ( for Making a Device )  )
 
-그리고 동봉된 " MFC 기반 유저모드 프로그램 " 을 활용하여 보다 쉽게 커널은 Control 하세요! ( 지금은 미완성입니다. ) 
+그리고 동봉된 " MFC 기반 유저모드 프로그램 " 을 활용하여 보다 쉽게 커널을 GUI상에서 Control 하세요! ( 지금은 미완성입니다. ) 
 
 ---
 
