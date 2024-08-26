@@ -26,6 +26,17 @@ IOCTL 프로그램은 직접 작성하셔야합니다.
 
 ---
 
+# *[Update]*
+
+[MFC기반 IOCTL 유저모드프로그램 ](https://github.com/lastime1650/KernelBased_GAMEHACKING/tree/main/IOCTL_USERMODE/_NEW_MFC_)은 이제 항시 업데이트됩니다.
+
+이전과 같이 CLI기반은 개발하지 않고, MFC로 GUI로 커널을 컨트롤할 수 있는 것에 재미를 느껴, { MFC개발 + 드라이버개발 } 을 하고 있습니다.
+
+
+
+---
+
+
 # 사용방법 
 
 ![initial](https://github.com/lastime1650/KernelBased_GAMEHACKING/blob/main/Images/image.png)
