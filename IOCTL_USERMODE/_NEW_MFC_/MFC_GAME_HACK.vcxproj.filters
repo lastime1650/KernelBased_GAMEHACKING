@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="HACK_리소스">
+      <UniqueIdentifier>{abb4ee49-fc05-4c1c-806f-c8844455b2b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HACK_리소스\IOCTL">
+      <UniqueIdentifier>{922e21d1-b14e-4f56-a9a0-54da5ae7497b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HACK_리소스\IOCTL\IOCTL_communication">
+      <UniqueIdentifier>{5e35c482-f7c5-404e-8390-a5fc79421abc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HACK_리소스\연결리스트">
+      <UniqueIdentifier>{55b81310-c24f-405b-b24a-c82b7d586ff4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HACK_리소스\연결리스트\Linked_list_MEM_query">
+      <UniqueIdentifier>{f389bdb1-6bb6-4959-96b7-1f79b88e20dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HACK_리소스\연결리스트\덤퍼">
+      <UniqueIdentifier>{0348d342-1f33-45dc-a2e0-ffd0836bd176}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\유저모드_쿼리">
+      <UniqueIdentifier>{81ad227d-26bb-4c66-9040-3a78a48da7bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\유저모드_쿼리\프로세스">
+      <UniqueIdentifier>{495e535c-475f-4a4d-a045-3c7adaf64557}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\부모클래스">
+      <UniqueIdentifier>{28650eee-380c-47de-a625-ae79d809369b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\비동기_스레드">
+      <UniqueIdentifier>{528184a4-556a-43e2-ad95-b774ac2bd939}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HACK_리소스\파일입출력">
+      <UniqueIdentifier>{ab8ffd89-c848-4856-84ef-7b59db31fc1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HACK_리소스\변환기">
+      <UniqueIdentifier>{18adc8e5-0fdb-4548-9ac1-668c8bc39d44}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MFC_GAME_HACK.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MFC_GAME_HACKDlg.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ATTACH_PROCESS.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Linked_list_MEM_query.h">
+      <Filter>HACK_리소스\연결리스트\Linked_list_MEM_query</Filter>
+    </ClInclude>
+    <ClInclude Include="IOCTL.h">
+      <Filter>HACK_리소스\IOCTL\IOCTL_communication</Filter>
+    </ClInclude>
+    <ClInclude Include="MEM_DUMP.h">
+      <Filter>HACK_리소스\연결리스트\덤퍼</Filter>
+    </ClInclude>
+    <ClInclude Include="Query_Process.h">
+      <Filter>헤더 파일\유저모드_쿼리\프로세스</Filter>
+    </ClInclude>
+    <ClInclude Include="Parallel_Thread.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DUMP_PROCESS.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="FILE_IO.h">
+      <Filter>HACK_리소스\파일입출력</Filter>
+    </ClInclude>
+    <ClInclude Include="converter.h">
+      <Filter>HACK_리소스\변환기</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MFC_GAME_HACK.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MFC_GAME_HACKDlg.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ATTACH_PROCESS.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="IOCTL_logic.cpp">
+      <Filter>HACK_리소스\IOCTL\IOCTL_communication</Filter>
+    </ClCompile>
+    <ClCompile Include="DUMP_PROCESS.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="FILE_IO_logic.cpp">
+      <Filter>HACK_리소스\파일입출력</Filter>
+    </ClCompile>
+    <ClCompile Include="converter_logic_.cpp">
+      <Filter>HACK_리소스\변환기</Filter>
+    </ClCompile>
+    <ClCompile Include="MEM_DUMP_logic.cpp">
+      <Filter>HACK_리소스\연결리스트\덤퍼</Filter>
+    </ClCompile>
+    <ClCompile Include="Query_Process_logic.cpp">
+      <Filter>헤더 파일\유저모드_쿼리\프로세스</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MFCGAMEHACK.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MFCGAMEHACK.rc2">
+      <Filter>리소스 파일</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\MFC_GAME_HACK.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
