@@ -26,7 +26,7 @@ PMEM_DUMP_NODE Create__MEM_DUMP_NODE(PMEM_DUMP_NODE Previous, PUCHAR Insert_targ
 
 
 	// 마지막 2회 가상주소할당 
-	PVOID BaseAddress2 = NULL;
+	PVOID BaseAddress2 = NULL;// exe 주소
 	
 	if (ZwAllocateVirtualMemory(IOCTL_requestor_HANDLE, &BaseAddress2, 0, &Insert_targetprocess_result_regionsize, MEM_COMMIT, PAGE_READWRITE) != STATUS_SUCCESS) {
 		ExFreePoolWithTag(tmp, 'SCAN');

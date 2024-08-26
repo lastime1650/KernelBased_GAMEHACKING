@@ -44,6 +44,9 @@
     <Filter Include="Source Files\MEMORY_HACKING\연결리스트\IOCTL요청자전용\덤프">
       <UniqueIdentifier>{060dc256-9358-4f89-9b04-65e4c0da8ab7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\비동기처리를위한__작업큐">
+      <UniqueIdentifier>{3a1b4ed6-9380-417f-82fa-7a7e0329607b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Inf Include="TEST_DRIVER.inf">
@@ -84,6 +87,9 @@
     <ClCompile Include="PE_parsing_logic.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="JOB_QUEUE_Manager_logic.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DriverEntry.h">
@@ -115,6 +121,9 @@
     </ClInclude>
     <ClInclude Include="MEM_DUMP_Link.h">
       <Filter>Source Files\MEMORY_HACKING\연결리스트\IOCTL요청자전용\덤프</Filter>
+    </ClInclude>
+    <ClInclude Include="JOB_QUEUE_Manger.h">
+      <Filter>Source Files\비동기처리를위한__작업큐</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

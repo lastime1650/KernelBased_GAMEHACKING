@@ -45,15 +45,24 @@ typedef struct DUMP_information {
 
 
 typedef enum IOCTL_command {
-    
-    general_scan=1, // user -( PID )-> kernel
 
+    loop__Check= 1,  // 유저모드에서 지속적으로 커널에게 체크하면서 ( "JOB_QUEUE'리턴 값 회수시도 ) 
+
+
+    ATTACH,// user -> kernel 어태치 ( 커널에서 주소접근 가능한가? ) 
+
+
+
+    general_scan, // user -( PID )-> kernel
     dump, // 커널단에서 덤프
-
     refresh, // IOCTL 요청자에서 알고 있는 타겟프로세스 주소의 데이터를 다시한번 조회하는 것.
 
-    editing // user -(PID + data_for_edit) -> kernel
+    editing, // user -(PID + data_for_edit) -> kernel
 
+
+    /* 응답용 */
+    ioctl_true,
+    ioctl_false
 
 }IOCTL_command;
 
@@ -88,7 +97,12 @@ typedef struct IOCTL_info {
 
 }IOCTL_info, * PIOCTL_info;
 
+
+#include "JOB_QUEUE_Manger.h"
+
+
 #include "KEVENT_or_KMUTEX_init.h"
+
 
 
 extern K_EVENT_or_MUTEX_struct IOCTL_thread_KEVENT;

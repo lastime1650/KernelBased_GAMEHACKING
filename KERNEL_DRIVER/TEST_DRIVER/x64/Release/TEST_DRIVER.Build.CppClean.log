@@ -7,6 +7,7 @@ c:\users\administrator\source\repos\test_driver\test_driver\x64\release\mem_hack
 c:\users\administrator\source\repos\test_driver\test_driver\x64\release\mem_dump_logic.obj
 c:\users\administrator\source\repos\test_driver\test_driver\x64\release\main.obj
 c:\users\administrator\source\repos\test_driver\test_driver\x64\release\kevent_or_kmutex_init_logic.obj
+c:\users\administrator\source\repos\test_driver\test_driver\x64\release\job_queue_manager_logic.obj
 c:\users\administrator\source\repos\test_driver\test_driver\x64\release\ioctl_logic.obj
 c:\users\administrator\source\repos\test_driver\test_driver\x64\release\driverentry_logic.obj
 c:\users\administrator\source\repos\test_driver\test_driver\x64\release\api_loader_logic.obj
@@ -20,8 +21,8 @@ c:\users\administrator\source\repos\test_driver\test_driver\x64\release\test_dri
 c:\users\administrator\source\repos\test_driver\test_driver\x64\release\test_driver.tlog\cl.items.tlog
 c:\users\administrator\source\repos\test_driver\test_driver\x64\release\test_driver.tlog\cl.read.1.tlog
 c:\users\administrator\source\repos\test_driver\test_driver\x64\release\test_driver.tlog\cl.write.1.tlog
-c:\users\administrator\source\repos\test_driver\test_driver\x64\release\test_driver.tlog\inf2cat-expand.21056.read.1.tlog
-c:\users\administrator\source\repos\test_driver\test_driver\x64\release\test_driver.tlog\inf2cat-expand.21056.write.1.tlog
+c:\users\administrator\source\repos\test_driver\test_driver\x64\release\test_driver.tlog\inf2cat-expand.27744.read.1.tlog
+c:\users\administrator\source\repos\test_driver\test_driver\x64\release\test_driver.tlog\inf2cat-expand.27744.write.1.tlog
 c:\users\administrator\source\repos\test_driver\test_driver\x64\release\test_driver.tlog\inf2cat-expand.read.1.tlog
 c:\users\administrator\source\repos\test_driver\test_driver\x64\release\test_driver.tlog\inf2cat-expand.write.1.tlog
 c:\users\administrator\source\repos\test_driver\test_driver\x64\release\test_driver.tlog\inf2cat.command.1.tlog

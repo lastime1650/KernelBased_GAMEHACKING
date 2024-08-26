@@ -29,7 +29,7 @@ BOOLEAN PID_TO_HANDLE(HANDLE* OUTPUT_HANDLE, HANDLE INPUT_PID) {
 ///
 #include "PE_parsing.h"//pe 구조체 
 #include "MEM_DUMP_Link.h" // 덤퍼 저장
-BOOLEAN QUERY_Module_Buffer(PMEMHACK_needs NEEDS, PEPROCESS SYSTEM_eprocess, PIOCTL_info* Inout_IOCTL) {
+BOOLEAN QUERY_Module_Buffer(PMEMHACK_needs NEEDS, PEPROCESS SYSTEM_eprocess, PIOCTL_info Inout_IOCTL) {
 
 	PVOID baseAddress = NULL;
 	MEMORY_BASIC_INFORMATION memoryInfo = { 0 };
@@ -47,7 +47,7 @@ BOOLEAN QUERY_Module_Buffer(PMEMHACK_needs NEEDS, PEPROCESS SYSTEM_eprocess, PIO
 
 	SIZE_T node_index = 0;
 	
-
+	DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "시작\n");
 	while (NT_SUCCESS(ZwQueryVirtualMemory(NEEDS->target_process_HANDLE, baseAddress, MemoryBasicInformation, &memoryInfo, sizeof(memoryInfo), NULL))) {
 		
 		baseAddress = (PVOID)((SIZE_T)memoryInfo.BaseAddress + memoryInfo.RegionSize);
@@ -56,7 +56,6 @@ BOOLEAN QUERY_Module_Buffer(PMEMHACK_needs NEEDS, PEPROCESS SYSTEM_eprocess, PIO
 		if (memoryInfo.State == MEM_COMMIT && ( memoryInfo.Type == MEM_IMAGE || memoryInfo.Type == MEM_MAPPED ) ) {
 
 			if (memoryInfo.RegionSize == (SIZE_T)0x1000 && CURRENT_EXE_DUMP_ADDR == NULL) {
-				
 
 				PUCHAR  start_addr = (PUCHAR)memoryInfo.BaseAddress;
 
@@ -71,7 +70,7 @@ BOOLEAN QUERY_Module_Buffer(PMEMHACK_needs NEEDS, PEPROCESS SYSTEM_eprocess, PIO
 
 					if (is_this_EXE_file(DUMP_BUFFER, &SizeOfImage)) {
 
-
+						DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "[DUMP] EXE찾음!\n");
 						if (CURRENT_ADDR == NULL) {
 							START_ADDR = Create__MEM_DUMP_NODE(NULL, start_addr, SizeOfImage, NEEDS->IOCTL_requstor_HANDLE, NEEDS->IOCTL_eprocess, NEEDS->target_eprocess, SYSTEM_eprocess, node_index);
 							CURRENT_ADDR = START_ADDR;
@@ -108,7 +107,7 @@ BOOLEAN QUERY_Module_Buffer(PMEMHACK_needs NEEDS, PEPROCESS SYSTEM_eprocess, PIO
 						*/
 
 					}
-
+ 
 					ExFreePoolWithTag(DUMP_BUFFER, 'SCAN');
 
 				}
@@ -140,8 +139,9 @@ BOOLEAN QUERY_Module_Buffer(PMEMHACK_needs NEEDS, PEPROCESS SYSTEM_eprocess, PIO
 		if ((PUCHAR)((PUCHAR)memoryInfo.BaseAddress + memoryInfo.RegionSize) < (PUCHAR)baseAddress) break;
 
 	}
-
-	((PIOCTL_info)*Inout_IOCTL)->dump_info.To_Ioctl_requestor=START_ADDR;
+	
+	Inout_IOCTL->dump_info.To_Ioctl_requestor = START_ADDR;
+	
 
 	// BUFFER 할당해제는 외부에서... 
 	return TRUE;

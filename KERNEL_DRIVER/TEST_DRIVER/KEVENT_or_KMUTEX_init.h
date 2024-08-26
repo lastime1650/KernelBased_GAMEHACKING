@@ -19,7 +19,7 @@ typedef struct K_EVENT_or_MUTEX_struct {
 
 }K_EVENT_or_MUTEX_struct, *PK_EVENT_or_MUTEX_struct;
 
-BOOLEAN K_object_init_check_also_lock_ifyouwant(PK_EVENT_or_MUTEX_struct Insert_your_OBJECT_addr, BOOLEAN is_you_want_lock);
+BOOLEAN K_object_init_check_also_lock_ifyouwant(PK_EVENT_or_MUTEX_struct Insert_your_OBJECT_addr,BOOLEAN is_you_want_lock);
 
 BOOLEAN K_object_lock_Release(PK_EVENT_or_MUTEX_struct Insert_your_OBJECT_addr);
 

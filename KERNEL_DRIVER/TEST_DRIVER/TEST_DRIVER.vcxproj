@@ -112,6 +112,7 @@
     <ClCompile Include="API_LOADER_logic.c" />
     <ClCompile Include="DriverEntry_logic.c" />
     <ClCompile Include="IOCTL_logic.c" />
+    <ClCompile Include="JOB_QUEUE_Manager_logic.c" />
     <ClCompile Include="KEVENT_or_KMUTEX_init_logic.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="MEM_DUMP_logic.c" />
@@ -125,6 +126,7 @@
     <ClInclude Include="API_LOADER.h" />
     <ClInclude Include="DriverEntry.h" />
     <ClInclude Include="IOCTL.h" />
+    <ClInclude Include="JOB_QUEUE_Manger.h" />
     <ClInclude Include="KEVENT_or_KMUTEX_init.h" />
     <ClInclude Include="MEM_DUMP_Link.h" />
     <ClInclude Include="MEM_HACK.h" />

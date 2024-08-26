@@ -1,6 +1,7 @@
 C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\API_LOADER_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\API_LOADER_logic.obj
 C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\DriverEntry_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\DriverEntry_logic.obj
 C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\IOCTL_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\IOCTL_logic.obj
+C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\JOB_QUEUE_Manager_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\JOB_QUEUE_Manager_logic.obj
 C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\KEVENT_or_KMUTEX_init_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\KEVENT_or_KMUTEX_init_logic.obj
 C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\main.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\main.obj
 C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\MEM_DUMP_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\MEM_DUMP_logic.obj

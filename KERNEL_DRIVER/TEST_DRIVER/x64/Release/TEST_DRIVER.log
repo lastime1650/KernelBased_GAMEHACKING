@@ -1,9 +1,10 @@
 ﻿  Building 'TEST_DRIVER' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
   Stamping x64\Release\TEST_DRIVER.inf
-  Stamping [Version] section with DriverVer=08/25/2024,1.38.40.655
+  Stamping [Version] section with DriverVer=08/26/2024,22.8.3.696
   API_LOADER_logic.c
   DriverEntry_logic.c
   IOCTL_logic.c
+  JOB_QUEUE_Manager_logic.c
   KEVENT_or_KMUTEX_init_logic.c
   main.c
   MEM_DUMP_logic.c
