@@ -61,7 +61,7 @@ IOCTL 프로그램은 직접 작성하셔야합니다.
 
 <br>
 
-![initial](https://github.com/lastime1650/KernelBased_GAMEHACKING/blob/main/Images/2.PNG)
+![initial](https://github.com/lastime1650/KernelBased_GAMEHACKING/blob/main/Images/KERNEL_BASED_GAME_CHEAT.png)
 
 대표적으로 제가 개발한 치트 동작은 총 2개의 API를 대표적으로 중요시합니다.
 
