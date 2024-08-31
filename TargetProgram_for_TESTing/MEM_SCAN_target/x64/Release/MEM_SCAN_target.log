@@ -1,0 +1,12 @@
+﻿  main.c
+C:\Users\Administrator\source\repos\MEM_SCAN_target\MEM_SCAN_target\main.c(46,19): warning C4312: '형식 캐스트': 'DWORD'에서 더 큰 'HANDLE'(으)로의 변환입니다.
+C:\Users\Administrator\source\repos\MEM_SCAN_target\MEM_SCAN_target\main.c(48,10): warning C4477: 'printf' : 서식 문자열 '%llu'에 'unsigned __int64' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'HANDLE'입니다.
+C:\Users\Administrator\source\repos\MEM_SCAN_target\MEM_SCAN_target\main.c(49,10): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 3의 형식이 'size_t'입니다.
+C:\Users\Administrator\source\repos\MEM_SCAN_target\MEM_SCAN_target\main.c(54,10): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 3의 형식이 'size_t'입니다.
+C:\Users\Administrator\source\repos\MEM_SCAN_target\MEM_SCAN_target\main.c(56,10): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 3의 형식이 'size_t'입니다.
+C:\Users\Administrator\source\repos\MEM_SCAN_target\MEM_SCAN_target\main.c(57,10): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 3의 형식이 'size_t'입니다.
+  코드를 생성하고 있습니다.
+  Previous IPDB not found, fall back to full compilation.
+  All 6 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  코드를 생성했습니다.
+  MEM_SCAN_target.vcxproj -> C:\Users\Administrator\source\repos\MEM_SCAN_target\x64\Release\MEM_SCAN_target.exe
