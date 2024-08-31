@@ -1,3 +1,10 @@
+
+*I strongly inform you that this is not for game hacking purposes (the title is just to attract attention (for publicity)), but for research purposes. You are solely responsible for its use.*
+
+*이는 게임 해킹 목적(제목은 단지 관심을 끌기 위한 목적(홍보용))이 아닌 연구 목적임을 강력히 알려드립니다. 그 사용에 대한 책임은 전적으로 귀하에게 있습니다.*
+
+---
+
 # KernelBased_GAMEHACKING
 
 This is for research purposes. WELCOME! 
