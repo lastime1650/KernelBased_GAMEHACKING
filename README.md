@@ -19,13 +19,7 @@ This is for research purposes. WELCOME!
 
 ---
 
-# *[주의]*
-
-IOCTL 프로그램은 직접 작성하셔야합니다. 
-
-이것은 연구목적이기 때문에 편리함은 고려하지 않았습니다.
-
-또한 지금 현재, 이 연구는 지속적인 업데이트가 필요합니다.
+# *[알림]*
 
 계속 저의 연구를 응원해주신다면, 많은 업데이트로 여러분에게 보답하겠습니다.
 
@@ -69,7 +63,7 @@ IOCTL 프로그램은 직접 작성하셔야합니다.
 
 ( KDU Loader는 DriverObject가 항상 NULL이기 떄문에 IoCreateDriver()를 이용하여 초기에 드라이버를 생성해야 IOCTL를 구현할 수 있습니다. ( for Making a Device )  )
 
-그리고 동봉된 [" MFC 기반 유저모드 프로그램 "](https://github.com/lastime1650/KernelBased_GAMEHACKING/tree/main/IOCTL_USERMODE/_NEW_MFC_) 을 활용하여 보다 쉽게 커널을 GUI상에서 Control 하세요! ( 지금은 미완성입니다. ) 
+그리고 동봉된 [" MFC 기반 유저모드 프로그램 "](https://github.com/lastime1650/KernelBased_GAMEHACKING/tree/main/IOCTL_USERMODE/_NEW_MFC_) 을 활용하여 보다 쉽게 커널을 GUI상에서 Control 하세요! 
 
 ---
 
