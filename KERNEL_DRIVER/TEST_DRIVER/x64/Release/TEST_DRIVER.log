@@ -1,16 +1,19 @@
 ﻿  Building 'TEST_DRIVER' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
   Stamping x64\Release\TEST_DRIVER.inf
-  Stamping [Version] section with DriverVer=08/26/2024,22.8.3.696
+  Stamping [Version] section with DriverVer=08/31/2024,14.15.58.402
   API_LOADER_logic.c
   DriverEntry_logic.c
   IOCTL_logic.c
   JOB_QUEUE_Manager_logic.c
+  Kernel_Based_DLL_injection_logic.c
   KEVENT_or_KMUTEX_init_logic.c
   main.c
+  Memory_Viewer_logic.c
   MEM_DUMP_logic.c
   MEM_HACK_LINK_LIST_logic.c
   MEM_HACK_logic.c
   MEM_HACK_private_link_list_logic.c
+  MEM_Page_Scan_Link_Logic.c
   PE_parsing_logic.c
   Process_manager_logic.c
   코드를 생성하고 있습니다...

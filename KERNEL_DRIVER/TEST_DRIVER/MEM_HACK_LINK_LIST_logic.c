@@ -22,8 +22,9 @@ PLinked_list_from_searching Create__Linked_list_for_searching(PLinked_list_from_
 		return NULL;
 	}
 
-	PLinked_list_from_searching tmp = ExAllocatePoolWithTag(PagedPool, sizeof(Linked_list_from_searching), 'SCAN');
-	
+	PLinked_list_from_searching tmp = ExAllocatePoolWithTag(NonPagedPool, sizeof(Linked_list_from_searching), 'SC3N');
+	if (tmp == NULL) return NULL;
+
 	tmp->previous_addr = (PUCHAR)previous_addr;
 	tmp->node_index = node_index; // 노드 순번
 	tmp->Searched__target_process_virtual_memory = Searched__target_process_virtual_memory;
@@ -33,9 +34,9 @@ PLinked_list_from_searching Create__Linked_list_for_searching(PLinked_list_from_
 
 
 	SIZE_T output = 0;
-	MmCopyVirtualMemory(SYSTEM_eprocess, tmp, IOCTL_requestor_eprocess, BaseAddress, SIZE, KernelMode, &output);
+	MmCopyVirtualMemory(SYSTEM_eprocess, tmp, IOCTL_requestor_eprocess, BaseAddress, sizeof(Linked_list_from_searching), KernelMode, &output);
 
-	ExFreePoolWithTag(tmp, 'SCAN');
+	ExFreePoolWithTag(tmp, 'SC3N');
 
 	return (PLinked_list_from_searching)BaseAddress;
 }

@@ -47,6 +47,15 @@
     <Filter Include="Source Files\비동기처리를위한__작업큐">
       <UniqueIdentifier>{3a1b4ed6-9380-417f-82fa-7a7e0329607b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Memory_Viewer 처리">
+      <UniqueIdentifier>{f015fb6b-20b2-4d3c-a612-815c1d4e7611}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MEMORY_HACKING\연결리스트\IOCTL요청자전용\타겟프로세스_메모리_페이지스캔">
+      <UniqueIdentifier>{4bb2f6b6-95db-474c-aa66-9892e3f03387}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\커널기반_DLL_인젝션">
+      <UniqueIdentifier>{b830b8ce-31e3-4d21-97ff-8ba9bfdae18d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Inf Include="TEST_DRIVER.inf">
@@ -90,6 +99,15 @@
     <ClCompile Include="JOB_QUEUE_Manager_logic.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Memory_Viewer_logic.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MEM_Page_Scan_Link_Logic.c">
+      <Filter>Source Files\MEMORY_HACKING\연결리스트\IOCTL요청자전용\타겟프로세스_메모리_페이지스캔</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel_Based_DLL_injection_logic.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DriverEntry.h">
@@ -124,6 +142,15 @@
     </ClInclude>
     <ClInclude Include="JOB_QUEUE_Manger.h">
       <Filter>Source Files\비동기처리를위한__작업큐</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory_Viewer_processing.h">
+      <Filter>Source Files\Memory_Viewer 처리</Filter>
+    </ClInclude>
+    <ClInclude Include="MEM_Page_Scan_Link.h">
+      <Filter>Source Files\MEMORY_HACKING\연결리스트\IOCTL요청자전용\타겟프로세스_메모리_페이지스캔</Filter>
+    </ClInclude>
+    <ClInclude Include="Kernel_Based_DLL_Injection.h">
+      <Filter>Source Files\커널기반_DLL_인젝션</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

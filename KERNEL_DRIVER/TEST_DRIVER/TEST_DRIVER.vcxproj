@@ -113,12 +113,15 @@
     <ClCompile Include="DriverEntry_logic.c" />
     <ClCompile Include="IOCTL_logic.c" />
     <ClCompile Include="JOB_QUEUE_Manager_logic.c" />
+    <ClCompile Include="Kernel_Based_DLL_injection_logic.c" />
     <ClCompile Include="KEVENT_or_KMUTEX_init_logic.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="Memory_Viewer_logic.c" />
     <ClCompile Include="MEM_DUMP_logic.c" />
     <ClCompile Include="MEM_HACK_LINK_LIST_logic.c" />
     <ClCompile Include="MEM_HACK_logic.c" />
     <ClCompile Include="MEM_HACK_private_link_list_logic.c" />
+    <ClCompile Include="MEM_Page_Scan_Link_Logic.c" />
     <ClCompile Include="PE_parsing_logic.c" />
     <ClCompile Include="Process_manager_logic.c" />
   </ItemGroup>
@@ -127,11 +130,14 @@
     <ClInclude Include="DriverEntry.h" />
     <ClInclude Include="IOCTL.h" />
     <ClInclude Include="JOB_QUEUE_Manger.h" />
+    <ClInclude Include="Kernel_Based_DLL_Injection.h" />
     <ClInclude Include="KEVENT_or_KMUTEX_init.h" />
+    <ClInclude Include="Memory_Viewer_processing.h" />
     <ClInclude Include="MEM_DUMP_Link.h" />
     <ClInclude Include="MEM_HACK.h" />
     <ClInclude Include="MEM_HACK_LINK_LIST.h" />
     <ClInclude Include="MEM_HACK_private_link_list.h" />
+    <ClInclude Include="MEM_Page_Scan_Link.h" />
     <ClInclude Include="PE_parsing.h" />
     <ClInclude Include="Process_manager.h" />
   </ItemGroup>

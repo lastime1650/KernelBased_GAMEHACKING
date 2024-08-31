@@ -46,11 +46,15 @@ VOID START_MEMHACK(MOVE* Inout__put_IOCTL_DATA);
 
 PALL_SCANNED_MEM_DATAS ALL_SCAN(PMEMHACK_needs NEEDS); // 일단 타겟 프로세스의 모든 주소를 조회한다.
 
-BOOLEAN NEW_SCAN(PMEMHACK_needs NEEDS, PALL_SCANNED_MEM_DATAS ALL_SCAN_LIST, PIOCTL_info Inout__put_IOCTL_DATA, PUCHAR Insert_data_for_search, SIZE_T Insert_data_size_for_search, PEPROCESS SYSTEM_eprocess); // 처음스캔을 요청한 경우 
+BOOLEAN First_Scan(PMEMHACK_needs NEEDS, PIOCTL_info Inout__put_IOCTL_DATA, PEPROCESS SYSTEM_eprocess, PUCHAR find_data, SIZE_T find_data_size);
 
-BOOLEAN NEXT_SCAN(PMEMHACK_needs NEEDS, PIOCTL_info Inout__put_IOCTL_DATA, PUCHAR Insert_data_for_search, SIZE_T Insert_data_size_for_search, PEPROCESS SYSTEM_eprocess);
+BOOLEAN Next_Scan(PMEMHACK_needs NEEDS, PIOCTL_info Inout__put_IOCTL_DATA, PEPROCESS SYSTEM_eprocess, PUCHAR find_data, SIZE_T find_data_size, PLinked_list_from_searching Start_IOCTL_VIrtual_Addr); 
 
 // 주소 수정 
 BOOLEAN Editing_MEM_to_targetprocess(PMEMHACK_needs NEEDS, PIOCTL_info Inout__put_IOCTL_DATA, PEPROCESS SYSTEM_eprocess);
+
+
+// 타겟 프로세스 가상주소 페이지 단위 전체 탐색
+BOOLEAN MEM_PAGE_SCAN_to_Target(PMEMHACK_needs NEEDS, PIOCTL_info Inout__put_IOCTL_DATA, PEPROCESS SYSTEM_eprocess);
 
 #endif // !MEM_HACK_H
