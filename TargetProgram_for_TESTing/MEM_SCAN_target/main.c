@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <Windows.h>
 
+#include <capstone/capstone.h>
 
 // 예외 처리기 함수
 LONG CALLBACK ExceptionHandler(PEXCEPTION_POINTERS ExceptionInfo) {
@@ -22,8 +23,32 @@ VOID function1() {
 
 
 int main() {
+	
+	csh handle;
+	cs_insn* insn;
+	size_t count;
 
-	PVOID handler = AddVectoredExceptionHandler(1, ExceptionHandler);
+	uint8_t code[] = { 0x48, 0x89, 0xd8, 0xc3 };  // mov rax, rbx; ret
+
+	if (cs_open(CS_ARCH_X86, CS_MODE_64, &handle) != CS_ERR_OK) {
+		printf("Failed to initialize Capstone\n");
+		return -1;
+	}
+
+	count = cs_disasm(handle, code, sizeof(code), 0x1000, 0, &insn);
+	if (count > 0) {
+		for (size_t i = 0; i < count; i++) {
+			printf("0x%" PRIx64 ": %s %s\n", insn[i].address, insn[i].mnemonic, insn[i].op_str);
+		}
+		cs_free(insn, count);
+	}
+	else {
+		printf("Failed to disassemble the code\n");
+	}
+
+	cs_close(&handle);
+
+	//PVOID handler = AddVectoredExceptionHandler(1, ExceptionHandler);
 
 	ULONG32 data = 1650;
 
@@ -62,6 +87,6 @@ int main() {
 		system("pause");
 	}
 
-	RemoveVectoredExceptionHandler(handler);
+	//RemoveVectoredExceptionHandler(handler);
 	return 0;
 }
