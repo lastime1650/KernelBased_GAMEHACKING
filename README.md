@@ -33,6 +33,13 @@ This is for research purposes. WELCOME!
 
 이전과 같이 CLI기반은 개발하지 않고, MFC로 GUI로 커널을 컨트롤할 수 있는 것에 재미를 느껴, { MFC개발 + 드라이버개발 } 을 하고 있습니다.
 
+## [2024-09-02]
+
+하드웨어 브레이크 포인트 ( Hardware based BreakPoint )기능을 도입하였습니다.
+하지만, DLL작성을 요구합니다. ( "Single Step Exception" 예외 핸들러를 작성해야합니다. )
+이 DLL은 [2024-08-31]당시 업데이트로 추가된 "커널기반 DLL 인젝션"으로 인젝션하고, Functions->Hardware Breakpoint메뉴에서 특정 주소를 Set한다음, 타겟프로세스에서 요청하는 IOCTL에 따라 커널은 연결리스트를 생성하고,
+이는 MFC의 "List Control"에 노출되도록 구현되었습니다.
+
 ## [2024-08-31]
 
 이제 다음과 같은 기능을 어느정도 사용할 수 있습니다. 
