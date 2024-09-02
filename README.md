@@ -40,6 +40,8 @@ This is for research purposes. WELCOME!
 하지만, DLL작성을 요구합니다. ( "Single Step Exception" 예외 핸들러를 작성해야합니다. )
 이 DLL은 [2024-08-31]당시 업데이트로 추가된 "커널기반 DLL 인젝션"으로 인젝션하고, Functions->Hardware Breakpoint메뉴에서 특정 주소를 Set한다음, 타겟프로세스에서 요청하는 IOCTL에 따라 커널은 연결리스트를 생성하고,
 이는 MFC의 "List Control"에 노출되도록 구현되었습니다.
+<br>
+하지만 MFC 인터페이스는 불안정한 상태이므로, 릴리즈에 포함하지 않았습니다.
 
 ## [2024-08-31]
 
