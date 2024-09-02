@@ -6,6 +6,7 @@
 #include "Memory_Viewer_processing.h" // 메모리 뷰어를 위한 로직
 
 #include "Kernel_Based_DLL_Injection.h" // 커널기반 DLL 인젝션
+#include "Set_HardWare_BP.h"
 
 VOID START_MEMHACK(MOVE* Inout__put_IOCTL_DATA) {
 	if (Inout__put_IOCTL_DATA == NULL ) return;
@@ -173,6 +174,18 @@ VOID START_MEMHACK(MOVE* Inout__put_IOCTL_DATA) {
 		NULL;
 		DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "--Kernel_Based_DLL_Injection일치\n");
 		KERNNEL_based_Dll_inject(&HACK_needs, &Copied_DATA->INPUT_DATA);
+		break;
+	case Hardware_breakpoint_set: // 하드웨어 브레이크 포인트 설정할 떄 ,
+		NULL;
+		DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "--Hardware_breakpoint_request일치\n");
+		Set_HardWare_Breakpoint(&Copied_DATA->INPUT_DATA, &HACK_needs);
+		DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "--Hardware_breakpoint_request끝\n");
+		break;
+	case Hardware_breakpoint_request_for_GET: // 하드웨어 브레이크 포인트 가져올때
+		NULL;
+		DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "--Hardware_breakpoint_request_for_GET일치\n");
+		Get_HardWare_Breakpoint(&Copied_DATA->INPUT_DATA, &HACK_needs, SYSTEM_eprocess);
+		
 		break;
 	default:
 		break;

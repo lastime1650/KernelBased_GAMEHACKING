@@ -1,9 +1,11 @@
 ﻿  Building 'TEST_DRIVER' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
   Stamping x64\Release\TEST_DRIVER.inf
-  Stamping [Version] section with DriverVer=08/31/2024,14.15.58.402
+  Stamping [Version] section with DriverVer=09/02/2024,12.13.32.889
   API_LOADER_logic.c
   DriverEntry_logic.c
+  HardWare_BreakPoint_Exception_logic.c
   IOCTL_logic.c
+  IOCTL_request_from_targetprocess_logic.c
   JOB_QUEUE_Manager_logic.c
   Kernel_Based_DLL_injection_logic.c
   KEVENT_or_KMUTEX_init_logic.c
@@ -16,6 +18,7 @@
   MEM_Page_Scan_Link_Logic.c
   PE_parsing_logic.c
   Process_manager_logic.c
+  Set_HardWare_BP_logic.c
   코드를 생성하고 있습니다...
   TEST_DRIVER.vcxproj -> C:\Users\Administrator\source\repos\TEST_DRIVER\x64\Release\TEST_DRIVER.sys
   Done Adding Additional Store

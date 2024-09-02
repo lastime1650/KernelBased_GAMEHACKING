@@ -56,6 +56,18 @@
     <Filter Include="Source Files\커널기반_DLL_인젝션">
       <UniqueIdentifier>{b830b8ce-31e3-4d21-97ff-8ba9bfdae18d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\타겟프로세스의_IOCTL요청처리">
+      <UniqueIdentifier>{ec85ac4f-8397-4c67-a29b-85d373d78335}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\타겟프로세스의_IOCTL요청처리\예외처리">
+      <UniqueIdentifier>{d1585d27-737e-4467-961d-32a1aadf8635}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\타겟프로세스의_IOCTL요청처리\예외처리\하드웨어BP">
+      <UniqueIdentifier>{a1a3d747-a2be-48a2-a30b-ef2765b92540}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\하드웨어BP걸기">
+      <UniqueIdentifier>{d0cbfa6b-32ac-4f01-8380-9b7169914fd2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Inf Include="TEST_DRIVER.inf">
@@ -108,6 +120,15 @@
     <ClCompile Include="Kernel_Based_DLL_injection_logic.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HardWare_BreakPoint_Exception_logic.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Set_HardWare_BP_logic.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IOCTL_request_from_targetprocess_logic.c">
+      <Filter>Source Files\타겟프로세스의_IOCTL요청처리</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DriverEntry.h">
@@ -151,6 +172,15 @@
     </ClInclude>
     <ClInclude Include="Kernel_Based_DLL_Injection.h">
       <Filter>Source Files\커널기반_DLL_인젝션</Filter>
+    </ClInclude>
+    <ClInclude Include="HardWare_BreakPoint_Exception.h">
+      <Filter>Source Files\타겟프로세스의_IOCTL요청처리\예외처리\하드웨어BP</Filter>
+    </ClInclude>
+    <ClInclude Include="IOCTL_request_from_TargetProcess.h">
+      <Filter>Source Files\타겟프로세스의_IOCTL요청처리</Filter>
+    </ClInclude>
+    <ClInclude Include="Set_HardWare_BP.h">
+      <Filter>Source Files\하드웨어BP걸기</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -217,6 +217,56 @@ typedef enum _SYSTEM_INFORMATION_CLASS
     MaxSystemInfoClass = 0xD2
 } SYSTEM_INFORMATION_CLASS;
 
+typedef struct _SYSTEM_THREAD_INFORMATION {
+    LARGE_INTEGER KernelTime;        // 커널 모드에서 소비한 CPU 시간
+    LARGE_INTEGER UserTime;          // 사용자 모드에서 소비한 CPU 시간
+    LARGE_INTEGER CreateTime;        // 스레드 생성 시간
+    ULONG WaitTime;                  // 대기 시간
+    ULONG Priority;                  // 스레드 우선 순위
+    LONG BasePriority;               // 기본 우선 순위
+    CLIENT_ID PID_and_THread_ID;             // 소속 프로세스 and 스레드
+    ULONG ThreadState;               // 스레드 상태
+    ULONG WaitReason;                // 대기 이유
+} SYSTEM_THREAD_INFORMATION, * PSYSTEM_THREAD_INFORMATION;
+
+/* PID 로 프로세스 정보 다 얻기 */
+typedef struct _SYSTEM_PROCESS_INFORMATION {
+    ULONG NextEntryOffset; // 다음 프로세스 정보 구조체까지의 바이트 오프셋
+    ULONG NumberOfThreads; // 이 프로세스의 스레드 수
+    LARGE_INTEGER WorkingSetPrivateSize; // 프라이빗 작업 세트 크기
+    ULONG HardFaultCount; // 하드 페이지 폴트 수
+    ULONG NumberOfThreadsHighWatermark; // 스레드의 최대 수
+    ULONGLONG CycleTime; // 이 프로세스의 사이클 시간
+    LARGE_INTEGER CreateTime; // 프로세스 생성 시간
+    LARGE_INTEGER UserTime; // 사용자 모드에서 사용된 시간
+    LARGE_INTEGER KernelTime; // 커널 모드에서 사용된 시간
+    UNICODE_STRING ImageName; // 프로세스의 이미지 이름
+    ULONG BasePriority; // 기본 우선순위
+    HANDLE UniqueProcessId; // 프로세스 식별자
+    HANDLE InheritedFromUniqueProcessId; // 부모 프로세스 식별자
+    ULONG HandleCount; // 프로세스가 소유한 핸들 수
+    ULONG SessionId; // 프로세스가 속한 세션 ID
+    ULONG_PTR UniqueProcessKey; // 프로세스의 고유 키
+    SIZE_T PeakVirtualSize; // 가상 메모리 최대 크기
+    SIZE_T VirtualSize; // 현재 가상 메모리 크기
+    ULONG PageFaultCount; // 페이지 폴트 수
+    SIZE_T PeakWorkingSetSize; // 작업 세트의 최대 크기
+    SIZE_T WorkingSetSize; // 현재 작업 세트 크기
+    SIZE_T QuotaPeakPagedPoolUsage; // 페이지 풀 사용량의 최대 크기
+    SIZE_T QuotaPagedPoolUsage; // 현재 페이지 풀 사용량
+    SIZE_T QuotaPeakNonPagedPoolUsage; // 비페이징 풀 사용량의 최대 크기
+    SIZE_T QuotaNonPagedPoolUsage; // 현재 비페이징 풀 사용량
+    SIZE_T PagefileUsage; // 페이지 파일 사용량
+    SIZE_T PeakPagefileUsage; // 페이지 파일 사용량의 최대 크기
+    SIZE_T PrivatePageCount; // 프로세스의 프라이빗 페이지 수
+    LARGE_INTEGER ReadOperationCount; // 읽기 작업 수
+    LARGE_INTEGER WriteOperationCount; // 쓰기 작업 수
+    LARGE_INTEGER OtherOperationCount; // 기타 작업 수
+    LARGE_INTEGER ReadTransferCount; // 읽기 전송량
+    LARGE_INTEGER WriteTransferCount; // 쓰기 전송량
+    LARGE_INTEGER OtherTransferCount; // 기타 전송량
+    SYSTEM_THREAD_INFORMATION Threads[1];
+} SYSTEM_PROCESS_INFORMATION, * PSYSTEM_PROCESS_INFORMATION;
 
 // 함수 포인터 구조체
 typedef NTSTATUS(*Bring_ZwQuerySystemInformation)(

@@ -1,6 +1,8 @@
 C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\API_LOADER_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\API_LOADER_logic.obj
 C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\DriverEntry_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\DriverEntry_logic.obj
+C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\HardWare_BreakPoint_Exception_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\HardWare_BreakPoint_Exception_logic.obj
 C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\IOCTL_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\IOCTL_logic.obj
+C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\IOCTL_request_from_targetprocess_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\IOCTL_request_from_targetprocess_logic.obj
 C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\JOB_QUEUE_Manager_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\JOB_QUEUE_Manager_logic.obj
 C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\Kernel_Based_DLL_injection_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\Kernel_Based_DLL_injection_logic.obj
 C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\KEVENT_or_KMUTEX_init_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\KEVENT_or_KMUTEX_init_logic.obj
@@ -13,3 +15,4 @@ C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\MEM_HACK_private_lin
 C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\MEM_Page_Scan_Link_Logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\MEM_Page_Scan_Link_Logic.obj
 C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\PE_parsing_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\PE_parsing_logic.obj
 C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\Process_manager_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\Process_manager_logic.obj
+C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\Set_HardWare_BP_logic.c;C:\Users\Administrator\source\repos\TEST_DRIVER\TEST_DRIVER\x64\Release\Set_HardWare_BP_logic.obj

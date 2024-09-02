@@ -7,11 +7,13 @@
 
 typedef struct JOB_QUEUE_STRUCT {
 
+    IOCTL_info INPUT_DATA;
+
     BOOLEAN is_finished_job; // 작업이 끝났는가? ( 초기엔 FALSE ) 
 
     PUCHAR This_Node_Start_Address; // 작업번호 대체재 ( 이 구조체의 동적할당된 주소/ 작업 결과를 적용하려면 넣어야함 (비동기이기 때문) ) 
 
-    IOCTL_info INPUT_DATA;
+    
 
 
     HANDLE Usermode_Mutex;

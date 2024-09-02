@@ -111,7 +111,9 @@
   <ItemGroup>
     <ClCompile Include="API_LOADER_logic.c" />
     <ClCompile Include="DriverEntry_logic.c" />
+    <ClCompile Include="HardWare_BreakPoint_Exception_logic.c" />
     <ClCompile Include="IOCTL_logic.c" />
+    <ClCompile Include="IOCTL_request_from_targetprocess_logic.c" />
     <ClCompile Include="JOB_QUEUE_Manager_logic.c" />
     <ClCompile Include="Kernel_Based_DLL_injection_logic.c" />
     <ClCompile Include="KEVENT_or_KMUTEX_init_logic.c" />
@@ -124,11 +126,14 @@
     <ClCompile Include="MEM_Page_Scan_Link_Logic.c" />
     <ClCompile Include="PE_parsing_logic.c" />
     <ClCompile Include="Process_manager_logic.c" />
+    <ClCompile Include="Set_HardWare_BP_logic.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API_LOADER.h" />
     <ClInclude Include="DriverEntry.h" />
+    <ClInclude Include="HardWare_BreakPoint_Exception.h" />
     <ClInclude Include="IOCTL.h" />
+    <ClInclude Include="IOCTL_request_from_TargetProcess.h" />
     <ClInclude Include="JOB_QUEUE_Manger.h" />
     <ClInclude Include="Kernel_Based_DLL_Injection.h" />
     <ClInclude Include="KEVENT_or_KMUTEX_init.h" />
@@ -140,6 +145,7 @@
     <ClInclude Include="MEM_Page_Scan_Link.h" />
     <ClInclude Include="PE_parsing.h" />
     <ClInclude Include="Process_manager.h" />
+    <ClInclude Include="Set_HardWare_BP.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

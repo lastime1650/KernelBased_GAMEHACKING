@@ -7,6 +7,11 @@
 #include "MEM_DUMP_Link.h"
 #include "MEM_Page_Scan_Link.h"
 
+/* 타겟프로세스 연동 구조체 */
+#include "HardWare_BreakPoint_Exception.h" // 하드웨어 BP
+
+//////////////////////////////
+
 #define IOCTL_MY_IOCTL_CODE CTL_CODE(FILE_DEVICE_UNKNOWN, 0x800, METHOD_BUFFERED, FILE_ANY_ACCESS)
 
 // 타겟 프로세스에 대한 최소한의 정보 ( 스캔할 때 도움이 됨 ) 
@@ -110,11 +115,39 @@ typedef struct Kernel_Dll_Injection {
 }Kernel_Dll_Injection, *PKernel_Dll_Injection;
 
 
+/*IOCTL 요청자에서의 하드웨어BP 관련 */
+typedef struct HardWare_BP_Set {
+
+    /* Dr0에 받아서  */
+    ULONG64 Monitor_TargetProcess_Address;
+
+    BOOLEAN is_SUCCESS;
+}HardWare_BP_Set, *PHardWare_BP_Set; // 커널에서 하드웨어 BP 걸기 
+
+typedef struct HardWare_BP_Get {
+    PHardWare_BP_struct_from_targetprocess OUTPUT; // IOCTL 가상주소에 동적할당 
+}HardWare_BP_Get, * PHardWare_BP_Get; // 커널에서 하드웨어 BP 가져오기 
+
+typedef struct HardWare_BP_info {
+
+    HardWare_BP_Set SET; // 하드웨어BP를 타겟프로세스에 걸기 
+    HardWare_BP_Get GET; // 하드웨어BP된 연결리스트 조회하여 가져오기
+   
+}HardWare_BP_info, *PHardWare_BP_info;
+
 typedef enum IOCTL_command {
 
     loop__Check = 1,  // 유저모드에서 지속적으로 커널에게 체크하면서 ( "JOB_QUEUE'리턴 값 회수시도 ) 
 
 
+    /* 타겟 프로세스 요청 info*/
+    Hardware_breakpoint_response, // 하드웨어 중단점 확인용
+
+
+
+
+
+    /* IOCTL 요청자 프로세스 요청 info  */
     ATTACH,// user -> kernel 어태치 ( 커널에서 주소접근 가능한가? ) 
 
     Memory_Viewer, // 메모리 뷰를 위한 데이터 요청 ( 쿼리 ) -> ( 타겟 프로세스 데이터 copy )-> ( IOCTL 유저 ) 
@@ -128,6 +161,11 @@ typedef enum IOCTL_command {
     Memory_Page_Scan, // 타겟 프로세스의 페이지를 모두 스캔한 결과를 IOCTL 유저 프로세스 공간에 연결리스트로 구축함 
 
     Kernel_Based_DLL_Injection, // 커널에서 DLL 인젝션
+
+    /* 하드웨어 BP 관련 BP */
+    Hardware_breakpoint_set, // 커널에서 하드웨어BP 걸때 
+    Hardware_breakpoint_request_for_GET,// IOCTL요청자에서 연결리스트 노드 데이터를 가져올때 
+    
 
     /* 응답용 */
     ioctl_true,
@@ -174,6 +212,9 @@ typedef struct IOCTL_info {
     // Editing ( 데이터 수정 ) 
     editing_address_information editing_info;
 
+    // 하드웨어 BP 용 ( Get,Set 모두 포함 ) 
+    HardWare_BP_info HWBP_info;
+
     HANDLE IOCTL_User_Mutex;
 }IOCTL_info, * PIOCTL_info;
 
@@ -191,5 +232,34 @@ NTSTATUS MyDeviceControl(
     _In_ PDEVICE_OBJECT DeviceObject,
     _In_ PIRP Irp
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+    DLL 에서 보내는 IOCTL 구조체 
+*/
+
+typedef struct IOCTL_info_but_Hardware_BP_from_TargetProcess {
+
+    IOCTL_command information;
+
+    HardWare_BP_struct_from_targetprocess Hardware_BP;
+
+}IOCTL_info_but_Hardware_BP_from_TargetProcess, * PIOCTL_info_but_Hardware_BP_from_TargetProcess;
+
+
 
 #endif
