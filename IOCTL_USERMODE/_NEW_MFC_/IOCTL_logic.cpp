@@ -51,7 +51,7 @@ DWORD WINAPI SendKernel(PJOB_QUEUE JOB) {
 	WaitForSingleObject(*IOCTL_MUTEX, INFINITE);
 
 
-	JOB_QUEUE Output_DATA = { 0, };
+	JOB_QUEUE Output_DATA;
 
 	DWORD bytesReturned;
 
@@ -182,10 +182,11 @@ PIOCTL_info STill_Checking_a_Job_when_finish_it(PJOB_QUEUE Input_your_Job) {
 DWORD WINAPI Kernel_LoopCheck(PVOID unused) {
 	
 	while (1) {
-		JOB_QUEUE check_test = { 0, };
-		check_test.INPUT_DATA.information = loop__Check;
+		PJOB_QUEUE check_test = (PJOB_QUEUE)malloc(sizeof(JOB_QUEUE));
+		memset(check_test, 0, sizeof(JOB_QUEUE));
+		check_test->INPUT_DATA.information = loop__Check;
 
-		SendKernel(&check_test);
+		SendKernel(check_test);
 		Sleep(1000);
 	}
 }

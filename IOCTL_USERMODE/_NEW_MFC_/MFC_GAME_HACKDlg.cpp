@@ -84,6 +84,10 @@ BEGIN_MESSAGE_MAP(CMFCGAMEHACKDlg, CDialogEx)
 	ON_COMMAND(ID_HELP_HOWTOUSEIT, &CMFCGAMEHACKDlg::OnHelpHowtouseit)
 
 
+	ON_COMMAND(ID_MEMORY_OPEN, &CMFCGAMEHACKDlg::OnMemoryOpen)
+	ON_COMMAND(ID_MEMORY_OPEN32778, &CMFCGAMEHACKDlg::OnMemoryOpen32778)
+	ON_COMMAND(ID_FUNCTIONS_KERNEL, &CMFCGAMEHACKDlg::OnFunctionsKernel)
+	ON_COMMAND(ID_FUNCTIONS_HARDWARE, &CMFCGAMEHACKDlg::OnFunctionsHardware)
 END_MESSAGE_MAP()
 
 
@@ -132,6 +136,13 @@ BOOL CMFCGAMEHACKDlg::OnInitDialog()
 
 	// IOCTL 동적할당
 	Input_Data = (PIOCTL_info)malloc(sizeof(IOCTL_info));
+	memset(Input_Data, 0, sizeof(IOCTL_info));
+	Input_Data->IOCTL_User_Mutex = CreateMutexA(NULL, FALSE, "Ioctl_Mutex");
+
+	Input_Data->Ioctl_requestor_PID = (HANDLE)GetCurrentProcessId(); // 초기
+
+
+
 
 	// 비동기 스레드 시작 ( 커널에게 지속적으로 Loop_Chekc 신호를 보내고, 반환에서 작업 큐를 회수해야함 ) 
 	CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)Kernel_LoopCheck, NULL, 0, NULL);
@@ -460,9 +471,26 @@ void CMFCGAMEHACKDlg::OnAttachStartattach()
 
 
 // Memory Scan 
+VOID Open_Scan_Win(PIOCTL_info a) {
+
+	MEM_SCAN_WIN* p_Dump_Process = new MEM_SCAN_WIN();
+
+	p_Dump_Process->IOCTL_info_From_Main_Window = a;
+
+	if (p_Dump_Process->Create(IDD_SCAN_WINDOW)) {
+		p_Dump_Process->ShowWindow(SW_SHOW);
+		p_Dump_Process->RunModalLoop();
+	}
+}
+
 void CMFCGAMEHACKDlg::OnMemoryStartmemoryscan()
 {
-	// TODO: 여기에 명령 처리기 코드를 추가합니다.
+	if (is_attached) {
+		CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)Open_Scan_Win, Input_Data, 0, NULL);
+	}
+	else {
+		AfxMessageBox(_T("please attach first"));
+	}
 }
 
 
@@ -484,6 +512,9 @@ void CMFCGAMEHACKDlg::OnDumpProcessdump()
 {
 
 	CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)APCCC, NULL, 0, NULL);
+	
+
+	
 
 
 	// TODO: 여기에 명령 처리기 코드를 추가합니다.
@@ -506,3 +537,104 @@ void CMFCGAMEHACKDlg::OnHelpHowtouseit()
 
 
 
+
+/*
+	비동기 메모리 뷰 열기
+*/
+VOID MEM_VIEW(PIOCTL_info a) {
+	MEM_VIEWER* p_MEM_VIEWER = new MEM_VIEWER();
+
+	// 필요한 데이터 전달
+	p_MEM_VIEWER->IOCTL_info_From_Main_Window = a;
+	if (p_MEM_VIEWER->Create(IDD_MEMORY_VIEWER)) {
+		p_MEM_VIEWER->ShowWindow(SW_SHOW);
+		p_MEM_VIEWER->RunModalLoop();
+	}
+}
+// 메모리 뷰 오픈 버튼
+void CMFCGAMEHACKDlg::OnMemoryOpen()
+{
+	// TODO: 여기에 명령 처리기 코드를 추가합니다.
+
+	if (is_attached) {
+		CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)MEM_VIEW, Input_Data, 0, NULL);
+	}
+	else {
+		AfxMessageBox(_T("please attach first"));
+	}
+	
+}
+
+
+/*
+	메모리 페이지 열기
+*/
+VOID MEM_PAGE_VIEW(PIOCTL_info a) {
+	MEM_PAGE_SCAN_CLASS* p_MEM_PAGE_VIEWER = new MEM_PAGE_SCAN_CLASS();
+
+	// 필요한 데이터 전달
+	p_MEM_PAGE_VIEWER->IOCTL_info_From_Main_Window = a;
+
+	if (p_MEM_PAGE_VIEWER->Create(IDD_MEMORY_PAGE_SCAN)) {
+		p_MEM_PAGE_VIEWER->ShowWindow(SW_SHOW);
+		p_MEM_PAGE_VIEWER->RunModalLoop();
+	}
+}
+// 메모리 페이지 뷰 오픈 버튼
+void CMFCGAMEHACKDlg::OnMemoryOpen32778()
+{
+	
+	// TODO: 여기에 명령 처리기 코드를 추가합니다.
+	CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)MEM_PAGE_VIEW, Input_Data, 0, NULL);
+	AfxMessageBox(_T("Your Request was sent to Kernel Please WAIT!!!!@@@ ( Don't request again with fast ) "));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 커널기반 DLL 인젝션 메뉴
+VOID Kernel_Based_Window(PIOCTL_info unused) {
+	KERNELBASED_DLL_INJECTION__* p__KernelBased_Dll_Injection_w = new KERNELBASED_DLL_INJECTION__();
+
+	// 필요한 데이터 전달
+
+	if (p__KernelBased_Dll_Injection_w->Create(IDD_KERNEL_DLL_INJECTION)) {
+		p__KernelBased_Dll_Injection_w->ShowWindow(SW_SHOW);
+		p__KernelBased_Dll_Injection_w->RunModalLoop();
+	}
+}
+void CMFCGAMEHACKDlg::OnFunctionsKernel()
+{
+	CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)Kernel_Based_Window, NULL, 0, NULL);
+}
+
+
+// 하드웨어 중단점 메뉴
+VOID HARDWARE_BP_Window(PIOCTL_info used) {
+	HARDWARE_BP_C* p_Hardware_BP = new HARDWARE_BP_C();
+
+	// 필요한 데이터 전달
+	p_Hardware_BP->IOCTL_info_From_Main_Window = used;
+	if (p_Hardware_BP->Create(IDD_HARDWARE_BP)) {
+		p_Hardware_BP->ShowWindow(SW_SHOW);
+		p_Hardware_BP->RunModalLoop();
+	}
+}
+void CMFCGAMEHACKDlg::OnFunctionsHardware()
+{
+	if (is_attached) {
+		CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)HARDWARE_BP_Window, Input_Data, 0, NULL);
+	}
+	else {
+		AfxMessageBox(_T("please attach first"));
+	}
+}

@@ -49,6 +49,12 @@
     <Filter Include="HACK_리소스\변환기">
       <UniqueIdentifier>{18adc8e5-0fdb-4548-9ac1-668c8bc39d44}</UniqueIdentifier>
     </Filter>
+    <Filter Include="HACK_리소스\연결리스트\메모리_페이지_스캔">
+      <UniqueIdentifier>{cfdbe5cd-9e04-4c2d-b68d-360d0858778c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HACK_리소스\하드웨어중단점">
+      <UniqueIdentifier>{40ba2844-24ec-44c3-be91-b089c3aeec59}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MFC_GAME_HACK.h">
@@ -99,6 +105,27 @@
     <ClInclude Include="converter.h">
       <Filter>HACK_리소스\변환기</Filter>
     </ClInclude>
+    <ClInclude Include="MEM_VIEWER.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MEM_Page_Scan_link.h">
+      <Filter>HACK_리소스\연결리스트\메모리_페이지_스캔</Filter>
+    </ClInclude>
+    <ClInclude Include="MEM_PAGE_SCAN_CLASS.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MEM_SCAN_WIN.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="KERNELBASED_DLL_INJECTION__.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Hardware_BreakPoint.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="HARDWARE_BP_C.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MFC_GAME_HACK.cpp">
@@ -130,6 +157,21 @@
     </ClCompile>
     <ClCompile Include="Query_Process_logic.cpp">
       <Filter>헤더 파일\유저모드_쿼리\프로세스</Filter>
+    </ClCompile>
+    <ClCompile Include="MEM_VIEWER.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MEM_PAGE_SCAN_CLASS.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MEM_SCAN_WIN.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="KERNELBASED_DLL_INJECTION__.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="HARDWARE_BP_C.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

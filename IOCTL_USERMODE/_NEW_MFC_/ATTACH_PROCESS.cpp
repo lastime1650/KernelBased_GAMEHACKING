@@ -94,6 +94,7 @@ void ATTACH_PROCESS::OnNMDblclkListCtrl(NMHDR* pNMHDR, LRESULT* pResult)
 			커널에게 질의 ( 동적할당 해서 보내야함 (확인됨) )
 		*/
 		PIOCTL_info INPUT_DATA = (PIOCTL_info)malloc(sizeof(IOCTL_info) ) ;
+		memset(INPUT_DATA, 0, sizeof(IOCTL_info));
 		INPUT_DATA->information = ATTACH;
 		INPUT_DATA->Ioctl_requestor_PID = (HANDLE)GetCurrentProcessId();
 		INPUT_DATA->target_process_info.target_PID = PID; // 커널에서 이 정보로 ATTACH할 것.
@@ -105,6 +106,13 @@ void ATTACH_PROCESS::OnNMDblclkListCtrl(NMHDR* pNMHDR, LRESULT* pResult)
 		if (Send_to_Kernel(INPUT_DATA, TRUE, &OUTPUT_DATA, NULL)) {
 			AfxMessageBox(_T("IOCTL성공"));
 
+			WaitForSingleObject(Parameter.Input_Data->IOCTL_User_Mutex, INFINITE);
+
+			Parameter.Input_Data->Ioctl_requestor_PID = INPUT_DATA->Ioctl_requestor_PID;
+			Parameter.Input_Data->target_process_info = INPUT_DATA->target_process_info;
+
+			ReleaseMutex(Parameter.Input_Data->IOCTL_User_Mutex);
+
 
 			*Parameter.is_Attach_from_Main = TRUE;
 		}
@@ -114,6 +122,8 @@ void ATTACH_PROCESS::OnNMDblclkListCtrl(NMHDR* pNMHDR, LRESULT* pResult)
 			AfxMessageBox(_T("IOCTL 실패"));
 			*Parameter.is_Attach_from_Main = FALSE;
 		}
+
+		free(INPUT_DATA);
 
 	}
 
@@ -233,7 +243,6 @@ VOID ATTACH_PROCESS::ReFresh_Processes() {
 	}
 
 
-	// OnInitDialog 또는 초기화 시점에서 실행
 	LIST_CTRL_Attach_PROCESS_inst.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
 
 
@@ -290,3 +299,4 @@ void ATTACH_PROCESS::OnBnClickedOk()
 	ReFresh_Processes();
 
 }
+

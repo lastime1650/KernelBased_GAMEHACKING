@@ -6,6 +6,12 @@
 
 #include "ATTACH_PROCESS.h"
 #include "DUMP_PROCESS.h"
+#include "MEM_VIEWER.h"
+#include "MEM_PAGE_SCAN_CLASS.h"
+#include "MEM_SCAN_WIN.h"
+#include "KERNELBASED_DLL_INJECTION__.h"
+#include "HARDWARE_BP_C.h"
+
 #include "IOCTL.h"
 #pragma once
 
@@ -87,4 +93,8 @@ public:
 		커널에게 전달할 구조체 
 	*/
 	PIOCTL_info Input_Data; // 초기에 동적할당 해야함 
+	afx_msg void OnMemoryOpen();
+	afx_msg void OnMemoryOpen32778();
+	afx_msg void OnFunctionsKernel();
+	afx_msg void OnFunctionsHardware();
 };

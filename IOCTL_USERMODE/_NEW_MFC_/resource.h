@@ -15,6 +15,7 @@
 #define IDD_MEMORY_PAGE_SCAN            139
 #define IDD_SCAN_WINDOW                 141
 #define IDD_KERNEL_DLL_INJECTION        143
+#define IDD_HARDWARE_BP                 145
 #define IDC_LIST_Address_Table          1000
 #define EDIT_ADDRESS_INPUT              1001
 #define CHECK_BOX_for_Input_Address_or_Offset 1002
@@ -53,6 +54,10 @@
 #define IDC_FILE_CHOOSE_BUTTT           1041
 #define IDC_CHOOSE_LOADLIBRARY_COMBO    1042
 #define IDC_INJECT_BUU                  1043
+#define IDC_DR0_EDIT                    1044
+#define IDC_DEBUG_LIST                  1046
+#define IDC_DEBUG_PID_EDIT              1047
+#define IDC_DR0_BUTTON                  1050
 #define ID_ATTACH_STARTATTACH           32771
 #define ID_MEMORY_STARTMEMORYSCAN       32772
 #define ID_DUMP_PROCESSDUMP             32773
@@ -68,9 +73,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        145
+#define _APS_NEXT_RESOURCE_VALUE        147
 #define _APS_NEXT_COMMAND_VALUE         32781
-#define _APS_NEXT_CONTROL_VALUE         1044
+#define _APS_NEXT_CONTROL_VALUE         1052
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

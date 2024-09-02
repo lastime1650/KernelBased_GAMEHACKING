@@ -63,4 +63,5 @@ public:
 	
 	CListCtrl LIST_CTRL_Attach_PROCESS_inst; // ID: LIST_CTRL_ATTACH_PROCESS_ID
 	afx_msg void OnBnClickedOk();
+	afx_msg void OnFunctionsHardware();
 };
