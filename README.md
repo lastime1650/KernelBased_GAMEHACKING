@@ -21,19 +21,9 @@ This is for research purposes. WELCOME!
 
 # *[알림]*
 
-## 현재 EDR 개발로 인해 중단되었습니다.
-
-계속 저의 연구를 응원해주신다면, 많은 업데이트로 여러분에게 보답하겠습니다.
-
-[+] 밑에 있는 설명들을 읽어주시면 어떻게 개발했는 지 확인하기 좋습니다.
+## 현재 < 2세대 버전 > 으로 업그레이드 중입니다.
 
 ---
-
-# *[Update]*
-
-[MFC기반 IOCTL 유저모드프로그램 ](https://github.com/lastime1650/KernelBased_GAMEHACKING/tree/main/IOCTL_USERMODE/_NEW_MFC_)
-
-이전과 같이 CLI기반은 개발하지 않고, MFC로 GUI로 커널을 컨트롤할 수 있는 것에 재미를 느껴, { MFC개발 + 드라이버개발 } 을 하고 있습니다.
 
 ## [2025-08-07] ( Current ) 
 
