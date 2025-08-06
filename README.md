@@ -35,6 +35,12 @@ This is for research purposes. WELCOME!
 
 이전과 같이 CLI기반은 개발하지 않고, MFC로 GUI로 커널을 컨트롤할 수 있는 것에 재미를 느껴, { MFC개발 + 드라이버개발 } 을 하고 있습니다.
 
+## [2025-08-07] ( Current ) 
+
+2세대 ( 2nd Generation Version ) 버전을 준비하고 있습니다.
+<br>
+WEB + C++ + C Kernel 로 구성된 환경 및 추가적인 LLM을 도입하여 차세대 적인 메모리 해킹 도구를 선사할 예정입니다.
+
 ## [2024-09-02]
 
 하드웨어 브레이크 포인트 ( Hardware based BreakPoint )기능을 도입하였습니다.
