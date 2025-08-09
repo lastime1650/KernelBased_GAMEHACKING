@@ -5,6 +5,13 @@
 
 ---
 
+# New Version ( Season 2 ) is Released ! Come here !!~ 
+
+## [KernelBased_GameHacking_Season2](https://github.com/lastime1650/Windows_Kernel_Based_GAMEHACKING_Season_2)
+
+---
+
+
 # KernelBased_GAMEHACKING
 
 This is for research purposes. WELCOME! 
