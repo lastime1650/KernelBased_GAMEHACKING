@@ -5,7 +5,7 @@
 
 ---
 
-# New Version ( Season 2 ) is Released ! Come here !!~ 
+# New Version ( Season 2 ) is Released !
 
 ![initial](https://github.com/lastime1650/Windows_Kernel_Based_GAMEHACKING_Season_2/blob/main/Images/Windows_KernelBased_GAMEHACK_LOGO.png)
 
