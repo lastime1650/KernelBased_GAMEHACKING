@@ -7,6 +7,8 @@
 
 # New Version ( Season 2 ) is Released ! Come here !!~ 
 
+![initial](https://github.com/lastime1650/Windows_Kernel_Based_GAMEHACKING_Season_2/blob/main/Images/Windows_KernelBased_GAMEHACK_LOGO.png)
+
 ## [KernelBased_GameHacking_Season2](https://github.com/lastime1650/Windows_Kernel_Based_GAMEHACKING_Season_2)
 
 ---
@@ -28,7 +30,7 @@ This is for research purposes. WELCOME!
 
 # *[알림]*
 
-## 현재 < 2세대 버전 > 으로 업그레이드 중입니다.
+## 현재 < 2세대 버전 > 으로 업그레이드 출시되었습니다.
 
 ---
 
